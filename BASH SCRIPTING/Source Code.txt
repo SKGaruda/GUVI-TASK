@@ -1,0 +1,19 @@
+TASK 1
+
+#!/bin/bash
+
+url=$1
+
+http_code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+
+echo "HTTP Status Code: $http_code"
+
+if [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
+    echo "Success: Website is reachable."
+else
+    echo "Failure: Website returned HTTP status code $http_code."
+fi
+
+TASK 2
+
+sed '5,${/welcome/s/\<give\>/learning/g}' file.txt
