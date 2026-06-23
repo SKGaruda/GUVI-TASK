@@ -1,0 +1,11 @@
+mkdir file_creation
+cd file_creation
+
+echo "This is the first version of the my file" > my_file.txt
+echo "This is the second version of the my another file" > my_another_file.txt
+
+cat my_another_file.txt >> my_file.txt
+
+cat my_file.txt
+
+ls -la
