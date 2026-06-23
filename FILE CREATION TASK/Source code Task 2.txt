@@ -1,0 +1,29 @@
+mkdir filedemo
+cd file demo
+
+vi exe1.sh
+#!/bin/bash
+
+for i in {1..20}
+do
+    echo "This is file $i" > file${i}.txt
+    sleep 1
+done
+
+chmod +x exe1.sh
+./exe1.sh
+ls
+
+
+vi exe2.sh
+#!/bin/bash
+
+for i in {1..5}
+do
+    mv file${i}.txt file${i}.yml
+done
+
+chmod +x exe1.sh
+./exe2.sh
+ls -1t *.yml
+
