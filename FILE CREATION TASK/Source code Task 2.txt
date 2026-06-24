@@ -1,0 +1,19 @@
+mkdir my_folder1
+cd my_folder1
+
+for i in $(seq 1 20); do
+  echo "Content of file $i" > "file_$i.txt"
+  sleep 0.1
+done
+
+ls
+
+for i in $(seq 1 5); do
+  mv "file_$i.txt" "file_$i.yml"
+done
+
+ls 
+
+ls -lt file_*
+
+ls -lt file_* | head -5

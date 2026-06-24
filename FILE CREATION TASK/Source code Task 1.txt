@@ -1,0 +1,12 @@
+mkdir my_folder
+cd my_folder
+
+echo "This is my file content" > my_file.txt
+echo "This is another file content" > another_file.txt
+
+cat another_file.txt >> my_file.txt
+
+ls -la
+
+cat another_file.txt
+cat my_file.txt
