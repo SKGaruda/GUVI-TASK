@@ -1,0 +1,4 @@
+touch /home/ec2-user/demo.txt
+chmod 764 /home/ec2-user/demo.txt
+
+ls -la /home/ec2-user/demo.txt
