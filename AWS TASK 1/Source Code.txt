@@ -1,0 +1,16 @@
+Log-in to AWS console.
+Search for EC2.
+Select Launch Instance.
+Name a web server (eg., DemoTesting01).
+Select Windows OS for Windows server.
+Create a new key pair as .pem and provide a name.
+Allow RDP, http and https.
+Click Launch Instance.
+Wait for few minutes and the click on get password.
+Upload the .pem file and select decrypt password.
+Open RDP in your local system.
+Copy the Public IP address of the windows instance.
+Log-in using UserName as Administrator and Paste the password generated in AWS console.
+Open CMD in VM Windows.
+Search CMD.
+Type systeminfo.
