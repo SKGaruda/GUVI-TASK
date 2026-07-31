@@ -1,0 +1,16 @@
+nslookup google.com
+
+top #for CPU usage
+free -h #for MEM usage
+
+ping -c 4 google.com
+
+#Task 2
+
+#Need to check for listening interface from the server
+ss -tupln | grep:9000
+
+#Test locally from the server
+curl -v http://<localhost>:9000 
+
+
