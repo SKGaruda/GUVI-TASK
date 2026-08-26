@@ -1,0 +1,53 @@
+Step 1: Create S3 Bucket
+	• Open AWS Console.
+	• Search S3.
+	• Click Create bucket.
+	• Give the bucket a unique name, for example:
+	• my-private-bucket-2026
+	• Select your Region.
+	• Keep Block all public access enabled.
+	• Click Create bucket.
+
+Step 2: Upload File
+	• Open your new bucket.
+	• Click Upload.
+	• Click Add files.
+	• Select a file from your computer.
+	• Click Upload.
+	• Now your file is stored in the private S3 bucket.
+
+Step 3: Create CloudWatch Log Group
+	• Search CloudWatch.
+	• Open CloudWatch.
+	• Select Logs → Log groups.
+	• Click Create log group.
+	• Enter:
+	• /s3/upload-logs
+	• Click Create.
+
+Step 4: Configure S3 Event Notification
+	• Go back to S3.
+	• Open your bucket.
+	• Click Properties.
+	• Scroll to Event notifications.
+	• Click Create event notification.
+	• Enter event name:
+	• FileUploadEvent
+	• Under Event types, select:
+	• All object create events.
+
+Step 5: Send Event to CloudWatch
+	• Under Destination, select CloudWatch Logs.
+	• Select the log group:
+	• /s3/upload-logs
+	• Click Save changes.
+
+Step 6: Test It
+	• Go back to your S3 bucket.
+	• Upload another file.
+	• Wait a short time.
+	• Open CloudWatch → Logs → Log groups.
+	• Open:
+	• /s3/upload-logs
+	• Open the latest Log stream.
+You should see the S3 upload event.
