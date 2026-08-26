@@ -1,0 +1,102 @@
+1. Create the VPC
+	• Go to VPC → Your VPCs.
+	• Click Create VPC.
+	• Select VPC only.
+	• Name: My-VPC
+	• IPv4 CIDR: 10.0.0.0/16
+	• Click Create VPC.
+
+2. Create Internet Gateway
+	• Go to Internet Gateways.
+	• Click Create internet gateway.
+	• Name: My-Internet-Gateway
+	• Click Create.
+	• Select the Internet Gateway.
+	• Click Actions → Attach to VPC.
+	• Select My-VPC.
+	• Click Attach internet gateway.
+
+3. Create Public Subnet
+	• Go to Subnets.
+	• Click Create subnet.
+	• Select VPC: My-VPC.
+	• Subnet name: Public-Subnet
+	• IPv4 CIDR: 10.0.1.0/24
+	• Click Create subnet.
+	• Then:
+	• Select Public-Subnet.
+	• Click Actions → Edit subnet settings.
+	• Enable Auto-assign public IPv4 address.
+	• Click Save.
+
+4. Create Private Subnet
+	• Go to Subnets → Create subnet.
+	• VPC: My-VPC
+	• Subnet name: Private-Subnet
+	• IPv4 CIDR: 10.0.2.0/24
+	• Click Create subnet.
+
+5. Create Route Table
+	• Go to Route Tables.
+	• Click Create route table.
+	• Name: Public-Route-Table
+	• VPC: My-VPC
+	• Click Create.
+
+6. Add Internet Gateway Route
+	• Select Public-Route-Table.
+	• Go to Routes.
+	• Click Edit routes.
+	• Click Add route.
+	• Destination: 0.0.0.0/0
+	• Target: Internet Gateway
+	• Select My-Internet-Gateway.
+	• Click Save changes.
+
+7. Connect Public Subnet to Route Table
+	• Select Public-Route-Table.
+	• Go to Subnet associations.
+	• Click Edit subnet associations.
+	• Select Public-Subnet.
+	• Click Save associations.
+
+8. Create Security Group
+	• Go to EC2 → Security Groups.
+	• Click Create security group.
+	• Name: Linux-Public-SG
+	• VPC: My-VPC
+	• Add inbound rule:
+	• Type: SSH
+	• Port: 22
+	• Source: My IP
+	• Click Create security group.
+
+
+9. Launch Linux EC2
+	• Go to EC2 → Instances.
+	• Click Launch instance.
+	• Name: Linux-Public-Server
+	• Select Amazon Linux 2023.
+	• Select an instance type such as t3.micro.
+	• Select key pair: (Use existing one).
+
+
+10. Configure Network
+	• Under Network settings, select:
+	• VPC: My-VPC
+	• Subnet: Public-Subnet
+	• Auto-assign Public IP: Enable
+	• Security Group: Linux-Public-SG
+
+11. Launch the Instance
+	• Check all the settings.
+	• Click Launch instance.
+	• Wait until the instance status becomes Running.
+
+12. Verify the EC2 Instance
+	• Select your instance and check:
+	• VPC: My-VPC
+	• Subnet: Public-Subnet
+	• Private IP: 10.0.1.x
+	• Public IPv4: Available
+	• Security Group: Linux-Public-SG
