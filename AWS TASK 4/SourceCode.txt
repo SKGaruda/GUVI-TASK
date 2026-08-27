@@ -1,0 +1,135 @@
+1. Launch Linux EC2
+	• Open AWS Console → EC2.
+	• Click Launch Instance.
+	• Name it Linux-Web-Server.
+	• Select Amazon Linux.
+	• Select a small instance type.
+	• Create/select a Key Pair.
+	• Create a Security Group.
+	• Allow:
+	• SSH – Port 22
+	• HTTP – Port 80
+	• Click Launch Instance.
+
+2. Install Web Server on Linux
+	• Connect to the Linux instance using EC2 Instance Connect.
+    Run:
+       sudo dnf install httpd -y
+       sudo systemctl start httpd
+       sudo systemctl enable httpd
+	• Create a test webpage:
+     echo "Hello from Linux Web Server" | sudo tee /var/www/html/index.html
+	• Copy the instance's Public IPv4 address.
+	• Open it in a browser:
+     http://Public-IP
+
+3. Create 5-GB EBS Volume
+	• Go to EC2 → Volumes.
+	• Click Create Volume.
+	• Select gp3.
+	• Set Size = 5 GiB.
+	• Select the same Availability Zone as the Linux instance.
+	• Click Create Volume.
+
+4. Attach EBS to Linux
+	• Select the new 5-GB volume.
+	• Click Actions → Attach Volume.
+	• Select the Linux instance.
+	• Click Attach.
+
+5. Mount EBS on Linux
+	• Connect to the Linux instance.
+	• Check the disk:
+    lsblk
+	• Format the new disk:
+    sudo mkfs -t xfs /dev/nvme1n1
+	• Create a folder:
+    sudo mkdir /data
+	• Mount the volume:
+    sudo mount /dev/nvme1n1 /data
+	• Check:
+    df -h
+
+6. Create Snapshot
+	• Go to EC2 → Volumes.
+	• Select the 5-GB EBS volume.
+	• Click Actions → Create Snapshot.
+	• Give it a name such as Linux-EBS-Snapshot.
+	• Click Create Snapshot.
+	• Go to EC2 → Snapshots.
+	• Wait until the status is Completed.
+
+7. Create EBS Volume from Snapshot
+	• Select the snapshot.
+	• Click Actions → Create Volume from Snapshot.
+	• Select 5 GiB.
+	• Select the required Availability Zone.
+	• Click Create Volume.
+
+8. Launch Windows EC2
+	• Go to EC2 → Instances.
+	• Click Launch Instance.
+	• Name it Windows-Web-Server.
+	• Select a Windows Server AMI.
+	• Select a small instance type.
+	• Create/select a Key Pair.
+	• Create a Security Group.
+     Allow: 
+     RDP – Port 3389
+     HTTP – Port 80  
+	• Click Launch Instance.
+
+9. Install IIS Web Server
+	• Select the Windows instance.
+	• Click Connect → RDP Client.
+	• Get/decrypt the Windows Administrator password.
+	• Connect using RDP.
+	• Open Server Manager.
+	• Select Add Roles and Features.
+	• Select Web Server (IIS).
+	• Click Install.
+	• Open a browser and visit: 
+    > http://localhost
+	• The IIS welcome page should appear.
+
+10. Create 5-GB EBS for Windows
+	• Go to EC2 → Volumes.
+	• Click Create Volume.
+	• Select gp3.
+	• Set Size = 5 GiB.
+	• Select the same Availability Zone as Windows EC2.
+	• Click Create Volume.
+
+11. Attach EBS to Windows
+	• Select the new volume.
+	• Click Actions → Attach Volume.
+	• Select the Windows EC2 instance.
+	• Click Attach.
+
+12. Format EBS in Windows
+	• Connect to Windows using RDP.
+	• Open Disk Management.
+	• Find the new 5-GB disk.
+	• Right-click → Initialize Disk.
+	• Select GPT.
+	• Right-click the unallocated space.
+	• Select New Simple Volume.
+	• Assign a drive letter, such as E:.
+	• Format it as NTFS.
+	• The new EBS drive will appear in File Explorer.
+
+13. Create Windows EBS Snapshot
+	• Go to EC2 → Volumes.
+	• Select the Windows 5-GB EBS volume.
+	• Click Actions → Create Snapshot.
+	• Name it Windows-EBS-Snapshot.
+	• Click Create Snapshot.
+	• Wait for Completed status.
+
+14. Create New EBS from Snapshot
+	• Go to EC2 → Snapshots.
+	• Select Windows-EBS-Snapshot.
+	• Click Actions → Create Volume from Snapshot.
+	• Select 5 GiB.
+	• Select the required Availability Zone.
+Click Create Volume.
