@@ -1,0 +1,25 @@
+Create an EC2 Instance
+
+Install Docker : 
+ sudo dnf install -y docker
+
+Check Docker Version:
+ docker --version
+
+Start and enable Docker Service:
+ sudo systemctl start docker
+ sudo systemctl enable docker
+
+Check for status:
+ sudo systemctl status docker
+
+Docker commands:
+ docker ps | List the Containers
+ docker run hello-world | Basic docker run command
+ docker images | List docker images
+ docker pull nginx | To pull images
+ docker image inspect nginx | To inspect images
+ docker stop hello-world | To stop the images
+ docker rmi nginx | To remove images
+ docker volume ls | To list the docker volumes
+ docker network ls | To list docker networks
