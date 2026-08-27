@@ -1,0 +1,28 @@
+Create an EC2 Instance.
+
+Install Docker and start/enable the services.
+
+To install Docker Compose, Follow the below steps:
+ sudo mkdir -p /usr/libexec/docker/cli-plugins/
+ sudo curl -SL "https://github.com/docker/compose/releases/latest/download/docker-compose-linux-$(uname -m)" -o   /usr/libexec/docker/cli-plugins/docker-compose
+ sudo chmod +x /usr/libexec/docker/cli-plugins/docker-compose
+
+Check for Docker compose version.
+
+Create a dir (docker-web-demo)
+
+Inside the Dir, Create:
+ index.html
+ Dockerfile
+ docker-compose.yml
+
+Build the Docker compose file:
+ docker build -t aws-ec2-web:1.0 .
+
+Verify the Image.
+
+Check the website using EC2 public ip address
+
+
+
+

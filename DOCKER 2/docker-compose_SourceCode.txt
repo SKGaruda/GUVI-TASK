@@ -1,0 +1,10 @@
+services:
+  web:
+    image: aws-ec2-web:1.0
+    container_name: aws-ec2-web
+
+    ports:
+      - "80:80"
+
+    restart: unless-stopped
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS EC2 Docker Demo</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            color: #232f3e;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 80px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #ff9900;
+        }
+
+        .info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚀 AWS EC2 Docker Demo</h1>
+
+    <p class="success">
+        Website is running successfully!
+    </p>
+
+    <div class="info">
+        <strong>Application:</strong> Docker Web Application<br>
+        <strong>Cloud:</strong> AWS<br>
+        <strong>Server:</strong> Amazon EC2<br>
+        <strong>Operating System:</strong> Amazon Linux 2023<br>
+        <strong>Web Server:</strong> Nginx<br>
+        <strong>Container:</strong> Docker<br>
+        <strong>Orchestration:</strong> Docker Compose
+    </div>
+
+    <h2>Basic Details</h2>
+
+    <p>
+        This website is running inside an Nginx Docker container
+        deployed on an AWS EC2 instance.
+    </p>
+
+    <p>
+        <strong>Status:</strong> Container is running ✅
+    </p>
+
+</div>
+
+</body>
+</html>
