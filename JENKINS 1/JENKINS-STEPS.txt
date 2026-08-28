@@ -1,0 +1,45 @@
+1. Create EC2
+2. Connect to EC2
+3. Install Java
+4. Install Jenkins
+5. Start Jenkins
+6. Open Jenkins in your browser:http://<EC2-IP>:8080
+
+7. Get Jenkins Password on EC2:
+8. Copy the password → paste it into Jenkins.
+9. Then:
+       Click Install suggested plugins.
+       Create an Admin User.
+       Click Start using Jenkins.
+       
+       #Project1
+       Create a Project
+       Go to Dashboard.
+       Click New Item.
+       Enter MyFirstProject.
+       Select Freestyle Project.
+       Click OK.
+       Go to Build Steps.
+       Select Execute shell.
+       Enter: echo "Hello from Jenkins" and date and pwd
+       Click Save.
+       Click Build Now.
+       Open Console Output.
+       
+       #Project2
+       Create a Project
+       Click New Item.
+       Enter SecondProject.
+       Select Freestyle Project.
+       Click OK.
+       Go to Build Steps.
+       Select Execute shell.
+       Enter: echo "This is my Second project from Jenkins"
+       Click Save.
+       Click Build Now.
+       Open Console Output.
+
+10. Create Users
+    Go to Manage Jenkins
+    Click Users
+    Add users (e.g. Dev, Prod, Tester)
