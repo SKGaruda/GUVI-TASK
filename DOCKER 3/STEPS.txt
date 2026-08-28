@@ -1,0 +1,15 @@
+1. Create EC2
+2. Connect to EC2
+3. Install and Start Docker
+4. Allow Ubuntu user to use Docker:
+5. Create the required volume directory
+6. Create HTML page
+7. Create Docker project
+8. Create Dockerfile
+9. Build custom image
+10. Create Docker Compose file
+11. Deploy with Docker Compose
+12. Test NGINX
+13. Login to Docker Hub
+14. Tag the image
+15. Push to Docker Hub

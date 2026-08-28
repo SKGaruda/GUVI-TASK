@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: mydockeruser/custom-nginx:1.0
+    container_name: custom-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - /var/opt/nginx:/usr/share/nginx/html:ro
+    restart: unless-stopped

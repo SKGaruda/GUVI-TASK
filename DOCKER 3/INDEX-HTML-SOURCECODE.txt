@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom NGINX</title>
+</head>
+<body>
+    <h1>Hello from Custom NGINX!</h1>
+    <p>Deployed using Docker Compose on AWS EC2.</p>
+</body>
+</html>
