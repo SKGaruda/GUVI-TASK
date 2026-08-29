@@ -1,0 +1,20 @@
+1. Create EC2 Instance
+2. Configure Security Group
+3. Connect to EC2
+4. Update Ubuntu
+5. Install Prometheus
+6. Configure Prometheus
+7. Install Node Exporter
+8. Start Node Exporter
+9. Start Prometheus
+10. Verify Prometheus
+11. Install Grafana
+12. Start Grafana
+13. Open Grafana
+14. Connect Grafana to Prometheus
+15. Create Grafana Dashboard
+16. Add CPU Metrics
+17. Add Memory Metrics
+18. Add Disk Metrics
+19. Save Dashboard
+20. Verify Metrics
