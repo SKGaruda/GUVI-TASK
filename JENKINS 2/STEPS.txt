@@ -1,0 +1,19 @@
+1. Create Ubuntu EC2 instance.
+2. Open EC2 ports 22 and 8080.
+3. Install Java and Jenkins.
+4. Open Jenkins using http://EC2-IP:8080.
+5. Create GitHub repository jenkins-demo.
+6. Create hello.sh script.
+7. Generate SSH key on EC2.
+8. Add SSH key to GitHub.
+9. Push hello.sh to GitHub.
+10. Create a Pipeline project in Jenkins.
+11. Connect Jenkins to the GitHub repository.
+12. Create a Jenkinsfile.
+13. Configure GitHub hook trigger in Jenkins.
+14. Add GitHub webhook: http://EC2-IP:8080/github-webhook/.
+15. Configure Gmail SMTP in Jenkins.
+16. Test Jenkins email.
+17. Commit and push a change to GitHub.
+18. Verify Jenkins automatically builds.
+19. Verify build output is received by email.

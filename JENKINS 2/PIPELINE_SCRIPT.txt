@@ -1,0 +1,67 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/YOUR_USERNAME/jenkins-demo.git'
+            }
+        }
+
+        stage('Run Script') {
+            steps {
+                sh '''
+                    chmod +x hello.sh
+                    ./hello.sh
+                '''
+            }
+        }
+    }
+
+    post {
+
+        success {
+            emailext(
+                to: 'your-email@example.com',
+                subject: "SUCCESS: Jenkins Build #${BUILD_NUMBER}",
+                body: """
+Hello,
+
+The Jenkins build completed successfully.
+
+Project: ${JOB_NAME}
+Build Number: ${BUILD_NUMBER}
+Build URL: ${BUILD_URL}
+
+The script was executed successfully.
+
+Regards,
+Jenkins
+"""
+            )
+        }
+
+        failure {
+            emailext(
+                to: 'your-email@example.com',
+                subject: "FAILED: Jenkins Build #${BUILD_NUMBER}",
+                body: """
+Hello,
+
+The Jenkins build failed.
+
+Project: ${JOB_NAME}
+Build Number: ${BUILD_NUMBER}
+Build URL: ${BUILD_URL}
+
+Please check the Jenkins console output.
+
+Regards,
+Jenkins
+"""
+            )
+        }
+    }
+}

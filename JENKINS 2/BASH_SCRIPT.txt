@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "================================"
+echo " Jenkins CI/CD Demo"
+echo "================================"
+
+echo "GitHub commit received."
+echo "Jenkins build triggered."
+echo "Script executed successfully."
+
+date
