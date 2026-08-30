@@ -1,0 +1,13 @@
+1. AWS EC2 Instance Setup
+2. Ubuntu Server Configuration
+3. Docker Installation and Configuration
+4. kubectl Installation
+5. Minikube Installation
+6. Minikube Cluster Creation
+7. Kubernetes Cluster Verification
+8. Kubernetes Namespace Exploration
+9. Namespace Creation
+10. Pod Deployment in Namespaces
+11. Namespace Isolation Demonstration
+12. Deployment and Service Creation
+13. Namespace Management Using YAML
