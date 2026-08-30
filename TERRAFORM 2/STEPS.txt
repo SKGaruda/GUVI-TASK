@@ -1,0 +1,15 @@
+1. Configure AWS CLI
+2. Create Terraform Project
+3. Configure AWS Providers
+4. Create EC2 Instances
+5. Configure Security Groups
+6. Install Nginx Using User Data
+7. Initialize Terraform
+8. Validate Terraform
+9. Create Terraform Plan
+10. Apply Terraform Configuration
+11. Get EC2 Public IPs
+12. Test Nginx
+13. Destroy Resources
+
+
