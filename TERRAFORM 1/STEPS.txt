@@ -1,0 +1,14 @@
+1. Install AWS CLI and Terraform
+2. Configure AWS CLI
+3. Verify AWS Credentials
+4. Create Terraform Project Folder
+5. Create Single main.tf File
+6. Configure Two AWS Regions
+7. Create Linux EC2 Instance in Region 1
+8. Create Linux EC2 Instance in Region 2
+9. Initialize Terraform
+10. Validate Terraform Configuration
+11. Review Terraform Plan
+12. Apply Terraform Configuration
+12. Verify EC2 Instances
+14. Destroy Resources After Testing
