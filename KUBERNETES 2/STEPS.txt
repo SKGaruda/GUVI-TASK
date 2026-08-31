@@ -1,0 +1,24 @@
+1. Install AWS CLI on Windows
+2. Configure AWS CLI
+3. Verify AWS Credentials
+4. Install kubectl on Windows
+5. Install eksctl on Windows
+6. Verify AWS CLI, kubectl, and eksctl
+7. Create the EKS Project Directory
+8. Create the EKS Cluster Configuration
+9. Validate the EKS Configuration
+10. Create the AWS EKS Cluster
+11. Verify the EKS Cluster
+12. Configure kubectl for EKS
+13. Verify Kubernetes Worker Nodes
+14. Check Kubernetes System Pods
+15. Create the Nginx Deployment
+16. Deploy the Nginx Application
+17. Verify Nginx Pods
+18. Create the Kubernetes LoadBalancer Service
+19. Expose Nginx Outside the Cluster
+20. Retrieve the AWS Load Balancer Endpoint
+21. Access Nginx from a Web Browser
+22. Test Nginx Using PowerShell
+23. Verify Kubernetes Resources
+24. Delete the EKS Cluster
